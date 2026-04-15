@@ -1,1 +1,50 @@
-# soff
+import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { motion } from "framer-motion";
+
+export default function DeenifyyWebsite() { return ( <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white"> {/* Navbar */} <nav className="flex justify-between items-center p-6"> <h1 className="text-2xl font-bold">Deenifyy</h1> <Button className="rounded-2xl">Get Started</Button> </nav>
+
+{/* Hero Section */}
+  <section className="text-center py-20 px-6">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-5xl font-extrabold mb-6"
+    >
+      Build Your Digital Presence 🚀
+    </motion.h2>
+    <p className="text-gray-300 max-w-xl mx-auto mb-8">
+      Deenifyy helps you create modern, fast, and beautiful websites with ease.
+    </p>
+    <Button className="px-8 py-4 text-lg rounded-2xl">
+      Explore Now
+    </Button>
+  </section>
+
+  {/* Features */}
+  <section className="grid md:grid-cols-3 gap-6 px-10 pb-20">
+    {["Fast", "Modern", "Responsive"].map((feature, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.2 }}
+      >
+        <Card className="rounded-2xl bg-gray-900 shadow-lg">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-xl font-semibold mb-2">{feature}</h3>
+            <p className="text-gray-400">
+              Experience top-notch performance and sleek design.
+            </p>
+          </CardContent>
+        </Card>
+      </motion.div>
+    ))}
+  </section>
+
+  {/* Footer */}
+  <footer className="text-center py-6 text-gray-500">
+    © 2026 Deenifyy. All rights reserved.
+  </footer>
+</div>
+
+); }
